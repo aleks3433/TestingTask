@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Matlashevskyi Oleksandr</string>
+    <string name="kom_gosp">Communal service</string>
+    <string name="stvoreno">Created</string>
+    <string name="v_roboti">In work</string>
+    <string name="vidpovidalnii">Responsible</string>
+    <string name="vidpovidalnii_pidpr">Dnipropetrovsk city EC</string>
+    <string name="virishiti">Solve to</string>
+    <string name="zareestrovano">Registered</string>
+    <string name="stvoreno_data">25 February 2016</string>
+    <string name="virishiti_data">29 February 2016</string>
+    <string name="zareestrovano_data">26 February 2016</string>
+    <string name="opisanie">Открытый люк (возле рекламного щита), район поворота 18 и 19 трамваев на проспект Мира с Донецкого шоссе</string>
+</resources>

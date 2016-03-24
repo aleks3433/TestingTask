@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="@dimen/activity_horizontal_margin"
+    >
+
+    <TextView
+
+        android:layout_marginBottom="@dimen/allMargin"
+        android:id="@+id/tvMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/kom_gosp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvMain"
+        android:text="@string/v_roboti"
+        style="@style/statusTextView"
+        android:onClick="onClick" />
+
+    <View
+        android:layout_marginTop="@dimen/allMargin"
+        android:id="@+id/divider1"
+        android:layout_below="@id/tvStatus"
+        style="@style/dividers"/>
+
+    <TextView
+        android:id="@+id/tvLabelCreated"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/divider1"
+        android:text="@string/stvoreno"
+        style="@style/labelsTextView"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/tvDateCreated"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/divider1"
+        android:text="@string/stvoreno_data"
+        style="@style/descriptionsTextView"
+        android:onClick="onClick" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_below="@id/tvLabelCreated"
+        style="@style/dividers"/>
+
+    <TextView
+        android:id="@+id/tvLabelRegistered"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/divider2"
+        android:text="@string/zareestrovano"
+        style="@style/labelsTextView"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/tvDateRegistered"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/divider2"
+        android:text="@string/zareestrovano_data"
+        style="@style/descriptionsTextView"
+        android:onClick="onClick" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_below="@id/tvLabelRegistered"
+        style="@style/dividers"/>
+
+    <TextView
+        android:id="@+id/tvLabelResolveTill"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/divider3"
+        android:text="@string/virishiti"
+        style="@style/labelsTextView"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/tvDateResolveTill"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/divider3"
+        android:text="@string/virishiti_data"
+        style="@style/descriptionsTextView"
+        android:onClick="onClick" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_below="@id/tvLabelResolveTill"
+        style="@style/dividers"/>
+
+    <TextView
+        android:id="@+id/tvLabelResponsible"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/divider4"
+        android:text="@string/vidpovidalnii"
+        style="@style/labelsTextView"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/tvNameResponsible"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/divider4"
+        android:text="@string/vidpovidalnii_pidpr"
+        style="@style/descriptionsTextView"
+        android:onClick="onClick" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_below="@id/tvLabelResponsible"
+        style="@style/dividers"/>
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/divider5"
+        android:text="@string/opisanie"
+        style="@style/descriptionsTextView"
+        android:onClick="onClick" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvDescription"
+        android:scrollbars="horizontal"
+        android:onClick="onClick" />
+
+
+
+</RelativeLayout>
