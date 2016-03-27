@@ -9,5 +9,5 @@
         android:padding="@dimen/allStylesPadding"
         android:id="@+id/imageViewItem"
          />
-
+    <!-- [Comment] Dead code  -->
 </LinearLayout>

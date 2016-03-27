@@ -11,11 +11,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 /**
- * Created by Санек on 20.03.2016.
+ * Created by Санек on 20.03.2016. //[Comment] Don't use kirillic symbols
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private Integer []integers;
-    private Context context;
+    private Integer []integers; //[Comment] Use google code style
+    private Context context; //[Comment] Use google code style
 
     public MyAdapter(Integer[] integers, Context context) {
         this.integers = integers;
@@ -47,13 +47,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 .with(context)
                 .load(integers[position])
                 .crossFade()
-                .override(200,200)
+                .override(200,200) //[Comment] Magic numbers
                 .into(holder.mImageView);
 
         holder.mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Ви натиснули на: \n" + position + "-й елемент списку", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Ви натиснули на: \n" + position + "-й елемент списку", Toast.LENGTH_SHORT).show(); //[Comment] Wrong info. Show controlname
             }
         });
 

@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+//[Comment] Wrong colors. Cells should be bigger
 public class MainActivity extends AppCompatActivity implements RecyclerView.OnClickListener{
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -16,14 +17,14 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnCl
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home){
-            this.finish();
+            this.finish(); //[Comment] Without this
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() { //[Comment] You don't need this method
         this.finish();
         super.onBackPressed();
     }
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnCl
         setContentView(R.layout.activity_main);
         initRV();
 
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar(); //[Comment] Optimize import
+        actionBar.setDisplayHomeAsUpEnabled(true); //[Comment] It can be null
     }
 
     private void initRV() {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnCl
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
         Integer[] myDataset = {R.drawable.luk, R.drawable.luk2};
-        mAdapter = new MyAdapter(myDataset,getBaseContext());
+        mAdapter = new com.matlashevskyi.oleksandr.yalantismatlashevskyioleksandr.MyAdapter(myDataset,getBaseContext());
         mRecyclerView.setAdapter(mAdapter);
     }
 
