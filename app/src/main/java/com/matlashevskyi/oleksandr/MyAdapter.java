@@ -11,15 +11,16 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 /**
- * Created by Санек on 20.03.2016.
+ * Created by Sanek on 20.03.2016.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private Integer []integers;
-    private Context context;
+    private Integer mIntegers[];
+    private Context mContext;
+    private final static int OVERRIDE = 200;
 
     public MyAdapter(Integer[] integers, Context context) {
-        this.integers = integers;
-        this.context = context;
+        this.mIntegers = integers;
+        this.mContext = context;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -44,16 +45,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(MyAdapter.ViewHolder holder, final int position) {
 
         Glide
-                .with(context)
-                .load(integers[position])
+                .with(mContext)
+                .load(mIntegers[position])
                 .crossFade()
-                .override(200,200)
+                .override(OVERRIDE,OVERRIDE)
                 .into(holder.mImageView);
 
         holder.mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Ви натиснули на: \n" + position + "-й елемент списку", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Ви натиснули на: \n" + position + "-й елемент списку", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -61,7 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return integers.length;
+        return mIntegers.length;
     }
 
 
