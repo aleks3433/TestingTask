@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.support.v7.app.ActionBar;
 
 public class MainActivity extends AppCompatActivity implements RecyclerView.OnClickListener{
     private RecyclerView mRecyclerView;
@@ -16,17 +17,12 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnCl
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home){
-            this.finish();
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onBackPressed() {
-        this.finish();
-        super.onBackPressed();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +31,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnCl
         setContentView(R.layout.activity_main);
         initRV();
 
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private void initRV() {
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnCl
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
         Integer[] myDataset = {R.drawable.luk, R.drawable.luk2};
-        mAdapter = new MyAdapter(myDataset,getBaseContext());
+        mAdapter = new com.matlashevskyi.oleksandr.yalantismatlashevskyioleksandr.MyAdapter(myDataset,getBaseContext());
         mRecyclerView.setAdapter(mAdapter);
     }
 
