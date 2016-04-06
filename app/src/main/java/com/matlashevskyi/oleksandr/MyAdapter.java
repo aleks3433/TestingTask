@@ -54,7 +54,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Ви натиснули на: \n" + position + "-й елемент списку", Toast.LENGTH_SHORT).show();
+                String string = v.getClass().getSimpleName();
+                Toast.makeText(mContext,string, Toast.LENGTH_SHORT).show();
             }
         });
 
