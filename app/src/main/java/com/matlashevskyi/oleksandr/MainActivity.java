@@ -49,10 +49,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnCl
 
     @Override
     public void onClick(View v) {
-        int i = v.getId();
-        String string = getResources().getResourceEntryName(i);
-
-        Toast.makeText(MainActivity.this,"Ви натиснули на: \n" + string, Toast.LENGTH_SHORT).show();
+        
+        String string = v.getClass().getSimpleName();
+        Toast.makeText(MainActivity.this,string, Toast.LENGTH_SHORT).show();
     }
 
 
